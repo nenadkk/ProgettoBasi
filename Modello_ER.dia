@@ -1479,7 +1479,7 @@
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="name">
-        <dia:string>#(1,1)#</dia:string>
+        <dia:string>#(1,N)#</dia:string>
       </dia:attribute>
       <dia:attribute name="rotation">
         <dia:real val="0"/>
@@ -1655,6 +1655,41 @@
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#(0,N)#</dia:string>
+      </dia:attribute>
+      <dia:attribute name="rotation">
+        <dia:real val="0"/>
+      </dia:attribute>
+      <dia:attribute name="text_font">
+        <dia:font family="monospace" style="0" name="Courier"/>
+      </dia:attribute>
+      <dia:attribute name="text_height">
+        <dia:real val="0.80000000000000004"/>
+      </dia:attribute>
+      <dia:attribute name="line_width">
+        <dia:real val="0"/>
+      </dia:attribute>
+      <dia:attribute name="line_colour">
+        <dia:color val="#000000ff"/>
+      </dia:attribute>
+      <dia:attribute name="fill_colour">
+        <dia:color val="#000000ff"/>
+      </dia:attribute>
+      <dia:attribute name="show_background">
+        <dia:boolean val="true"/>
+      </dia:attribute>
+    </dia:object>
+    <dia:object type="Standard - Outline" version="0" id="O45">
+      <dia:attribute name="obj_pos">
+        <dia:point val="34.3338,35.4799"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="34.3338,35.4799;36.4092,36.199"/>
+      </dia:attribute>
+      <dia:attribute name="meta">
+        <dia:composite type="dict"/>
+      </dia:attribute>
+      <dia:attribute name="name">
+        <dia:string>#(0,1)#</dia:string>
       </dia:attribute>
       <dia:attribute name="rotation">
         <dia:real val="0"/>
