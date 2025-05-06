@@ -1,0 +1,24 @@
+ATTIVITÀ DA SUDDIVIDERE
+
+1. Pagina con titolo del progetto e membri del gruppo
+
+2. Abstract
+
+3. Analisi dei requisiti
+    3.1 - Descrizione testuale dei requisiti e operazioni tipiche
+
+4. Progettazione concettuale
+    4.1 - [FATTO] Schema concettuale (E-R)
+    4.2 - Glossario delle entità e relazioni (vedi slide Progettazione Concettuale)
+
+5. Progettazione logica
+    5.1 - Ristrutturazione dello schema
+    5.2 - Schema relazionale
+
+6. Implementazione dello schema logico
+
+7. Definizione delle query e degli indici associati
+
+8. Discussione dell’applicazione software che accede al DB per effettuare le query del punto 6
+
+
