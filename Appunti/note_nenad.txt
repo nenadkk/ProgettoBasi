@@ -1,6 +1,3 @@
 Nella relazione banditore tra persona e asta si intende che una persona può o meno essere un banditore di aste,
 mentre un'asta deve avere per forza uno e un solo banditore. Nel caso una persona sia banditore di un'asta non può
-fare offerte per essa ne tantomeno esserene il compratore.
-
-
-
+fare offerte per essa tantomeno esserene il compratore.

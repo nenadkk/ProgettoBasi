@@ -1,0 +1,3 @@
+- trovare il modo di impedire ad uno stesso banditore di essere tale a più di un asta iniziata nello stesso giorno
+- un prodotto non può fare parte di più un asta iniziata nello stesso giorno
+- 2 persone non possono fare un'offerta alla stessa asta nell'esatto momento
