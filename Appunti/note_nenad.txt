@@ -4,3 +4,5 @@ fare offerte per essa tantomeno esserene il compratore.
 
 Per l'analisi delle ridondanze si potrebbe analizzare in asta aperta l'utilità degli attributi n_partecipanti e offertaMax
 (è molto simile alla ridondanza dell'esempio) Nota: basta anche una sola ridondanza
+Avrebbe senso valutare se tenere offertaMax perché in un'ottica realistica durante un'asta si vorrebbe sapere di continuo qual é al momento l'offerta da superare, andare a ricalcolare ogni volta il valore potrebbe non essere conveniente.
+N_partecipanti invece potrebbe interessare ad asta conclusa in un'eventuale fase di valutazione del prodotto per vedere quanto interesse c'è per esso, tuttavia non è qualcosa di fondamentale per lo svolgersi dell'asta.

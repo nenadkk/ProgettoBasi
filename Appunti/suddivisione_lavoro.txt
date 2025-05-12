@@ -12,8 +12,10 @@ ATTIVITÀ DA SUDDIVIDERE
     3.2 - [FATTO] Glossario delle entità e relazioni (vedi slide Progettazione Concettuale)
 
 4. Progettazione logica
-    4.1 - Ristrutturazione dello schema
-    4.2 - Schema relazionale
+    4.1 - Analisi delle ridondanze
+    4.2 - Eliminazione delle generalizzazioin
+    4.3 - Normalizzazione
+    4.4 - Schema relazionale 
 
 5. Implementazione dello schema logico
 

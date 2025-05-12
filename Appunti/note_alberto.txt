@@ -9,4 +9,6 @@
 - Esempi di Query non banale :
     Partendo dall'attuale proprietario di un prodotto, risalire al suo precedente proprietario
     Partendo da un'asta chiusa, risalire al suo banditore
+    [Nenad]Dato un prodotto ottenere la cronologia dei suoi "passaggi di proprietà" ordinata, in 
+    modo da vedere per chi è passata e come si è evoluto il suo prezzo all'asta
 
