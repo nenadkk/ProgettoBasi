@@ -12,3 +12,18 @@
     [Nenad]Dato un prodotto ottenere la cronologia dei suoi "passaggi di proprietà" ordinata, in 
     modo da vedere per chi è passata e come si è evoluto il suo prezzo all'asta
 
+
+
+13/05 
+Vincoli non esprimibili mediante il modello ER:
+Un’offerta per una certa asta a una certa ora deve essere unica per persona
+→ Serve vincolo composito nell’implementazione logica.
+
+Una persona può essere banditore di una sola asta alla volta
+→ Non puoi esprimere che una Persona sia collegata tramite Banditore a una sola asta "aperta" alla volta.
+
+Una persona può essere offerente e banditore, ma non per la stessa asta
+→ Serve vincolo inter-relazionale (Persona non può comparire sia in Banditore che in Offerta per la stessa Asta).
+
+Una persona può vendere solo prodotti che possiede
+→ Il vincolo "il venditore deve essere il proprietario corrente del prodotto" non è esprimibile nell’ER (ma è importante nel dominio).
