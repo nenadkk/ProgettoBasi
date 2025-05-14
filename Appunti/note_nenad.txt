@@ -11,3 +11,6 @@ N_partecipanti invece potrebbe interessare ad asta conclusa in un'eventuale fase
 Note sull'ER nuovo
 -cosa intendi con l'attributo dipendenti? [Risolto]
 -rapporto (1,1) tra certifica e prodotto
+
+
+ESPORTARE L'IMMAGINE CON 'PNG Cairo' PER AVERE LO SFONDO
