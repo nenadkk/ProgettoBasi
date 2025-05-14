@@ -2,18 +2,20 @@ ATTIVITÀ DA SUDDIVIDERE
 
 0. Pagina con titolo del progetto e membri del gruppo
 
-1. Abstract
+1. [FATTO] Abstract
 
 2. Analisi dei requisiti
-    2.1 - Descrizione testuale dei requisiti e operazioni tipiche
+    2.1 - [FATTO] Descrizione testuale dei requisiti e operazioni tipiche
 
 3. Progettazione concettuale
     3.1 - [FATTO] Schema concettuale (E-R)
-    3.2 - Glossario delle entità e relazioni (vedi slide Progettazione Concettuale)
+    3.2 - [FATTO] Glossario delle entità e relazioni (vedi slide Progettazione Concettuale)
 
 4. Progettazione logica
-    4.1 - Ristrutturazione dello schema
-    4.2 - Schema relazionale
+    4.1 - Analisi delle ridondanze
+    4.2 - Eliminazione delle generalizzazioin
+    4.3 - Normalizzazione
+    4.4 - Schema relazionale 
 
 5. Implementazione dello schema logico
 
