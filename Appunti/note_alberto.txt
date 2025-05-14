@@ -4,9 +4,35 @@
 
 
 
-- Nota non esprimibile nel modello ER : una persona non può essere banditore di più aste nello stesso giorno (o finché non viene chiusa) non  esprimibile nel Modello ER ma solo nel modello Relazionale
+- Nota non esprimibile nel modello ER : una persona non può essere banditore di più aste  
+    nello stesso giorno (o finché non viene chiusa) non  esprimibile nel Modello ER ma solo nel modello Relazionale
 
 - Esempi di Query non banale :
     Partendo dall'attuale proprietario di un prodotto, risalire al suo precedente proprietario
-    Partendo da un'asta chiusa, risalire al suo banditore
 
+1. Le persone possono essere : banditori, proprietari, offerenti, certificatori  e compratori 
+   Non possono tuttavia essere :
+    - banditori e offerenti per la stessa asta;
+    - banditori se non sono proprietari di quel bene (banditori a questo punto si potrebbe togliere come relazione)
+    - può essere compratore di un prodotto, a patto che non ne fosse il banditore 
+    - si può essere sempre certificatori del prodotto (cioè anche proprietari e/o compratori e/o offerenti)
+
+2. Ogni prodotto deve sempre avere un proprietario, non può esserci un momento in cui la
+   dataFineProprietà non combaci con la data di inizio del nuovo proprietario 
+   (quindi bisognerà aggiornare ogni volta il proprietario che finisce un'asta)
+
+3. Le carte hanno sempre almeno un certificato ma è possibile che ne abbiamo 
+   anche più di 1, magari assegnato anche dalla stessa persona in qualità di certificatore 
+
+4. Solo gli offerenti possono fare offerte 
+    - Non è possibile che il proprietario faccia delle offerte per un prodotto all'asta di cui ne è proprietario 
+
+5. Il compratore di un'asta deve corrispondere al suo attuale proprietario (o se è 
+   stato rivenduto nuovamente deve poter essere accessibile come vecchio proprietario 
+   valutando la data di inizio proprietà dell'attuale con quella di fine del precedente 
+   (ciò significa che la data di inizio proprietà deve coincidere con la data di fine della sua asta [possibile ridondanza?])
+
+6. Dal momento che le carte devono necessariamente avere almeno un certificato di autenticazione
+   serve controllare che la carta non sia stata oggetto di compravendita di aste
+   antecedenti alla data di ricevimento del primo certificato (dato che le carte
+   possono avere anche più di un certificato)
