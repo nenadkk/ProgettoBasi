@@ -24,3 +24,20 @@ ATTIVITÀ DA SUDDIVIDERE
 7. Discussione dell’applicazione software che accede al DB per effettuare le query del punto 6
 
 
+QUERY DA FARE:
+
+1 - Partendo dall'attuale proprietario di un prodotto, risalire al suo precedente proprietario
+2 - Partendo da un'asta chiusa, risalire al suo banditore
+3 - Dato un prodotto ottenere la cronologia dei suoi "passaggi di proprietà" ordinata, in 
+    modo da vedere per chi è passata e come si è evoluto il suo prezzo all'asta
+4 - Data una persona mostrare se ci sono (e in caso quali sono) aste aperte in cui è
+    attualmente il maggiore offerente
+5 - 
+
+
+
+
+
+
+
+
