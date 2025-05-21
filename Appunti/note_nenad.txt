@@ -13,4 +13,9 @@ Note sull'ER nuovo
 -rapporto (1,1) tra certifica e prodotto
 
 
-ESPORTARE L'IMMAGINE CON 'PNG Cairo' PER AVERE LO SFONDO
+Cosa si intende con l'attributo livello in 'Sponsor' ->quanto è importante
+attributo collaboratori in 'Banditore'
+in certificato 'entrata in vigore'
+
+
+
