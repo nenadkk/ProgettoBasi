@@ -19,3 +19,7 @@ in certificato 'entrata in vigore'
 
 
 
+modificare la chiave primaria nella tabella specializzazione aggiungendoci banditore
+
+nello schema er mettere la relazione venditore tra asta e persona, e poi la relazione 
+proprietario tra persona e prodotto -> serve poi aggiornare lo schema relazionale
