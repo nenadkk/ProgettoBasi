@@ -1,175 +1,65 @@
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000', 'Certificato-46964', '5/15/2019', 'Analisi ABC');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000001','Certificato-82157', '10/17/2013', 'Analisi del portafoglio prodotti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000002','Certificato-99822', '8/27/2005', 'Analisi ABC');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000003','Certificato-21690', '5/21/2022', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000004','Certificato-47691', '3/3/2019', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000005','Certificato-44099', '9/10/2007', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000006','Certificato-40326', '8/7/2017', 'Analisi delle coorti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000007','Certificato-82351', '8/27/2001', 'Analisi del portafoglio prodotti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000008','Certificato-45879', '8/12/2023', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000009','Certificato-34466', '6/14/2018', 'Analisi del valore');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-35932', '11/12/2005', 'Analisi del ciclo di vita del prodotto');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000001','Certificato-29970', '1/27/2009', 'Analisi SWOT');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000002','Certificato-29748', '6/27/2005', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000003','Certificato-29730', '11/25/2005', 'Analisi del portafoglio prodotti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000004','Certificato-86835', '7/9/2018', 'Analisi del valore');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000005','Certificato-25626', '9/4/2002', 'Analisi sensoriale');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000006','Certificato-48726', '11/10/2016', 'Analisi sensoriale');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000007','Certificato-45696', '2/4/2024', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000008','Certificato-23618', '1/15/2023', 'Analisi del valore');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000009','Certificato-61430', '7/12/2005', 'Analisi del ciclo di vita del prodotto');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-79543', '4/7/2011', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000001','Certificato-30199', '11/11/2003', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000002','Certificato-52649', '10/16/2005', 'Analisi del valore');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000003','Certificato-30501', '3/12/2004', 'Analisi sensoriale');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000004','Certificato-32456', '12/24/2000', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000005','Certificato-57388', '10/27/2001', 'Analisi ABC');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000006','Certificato-98414', '12/19/2005', 'Analisi del portafoglio prodotti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000007','Certificato-24499', '4/16/2021', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000008','Certificato-73232', '6/20/2019', 'Analisi del ciclo di vita del prodotto');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000009','Certificato-82489', '11/26/2005', 'Analisi delle coorti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-32830', '5/29/2015', 'Analisi del valore');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000001','Certificato-38121', '3/18/2019', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000002','Certificato-29004', '7/11/2017', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000003','Certificato-66729', '4/5/2007', 'Analisi sensoriale');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000004','Certificato-45228', '7/13/2001', 'Analisi del percorso cliente');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000005','Certificato-88642', '3/6/2002', 'Analisi del ciclo di vita del prodotto');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000006','Certificato-25216', '11/16/2010', 'Analisi della concorrenza');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000007','Certificato-42262', '1/4/2009', 'Analisi dei guasti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000008','Certificato-56392', '10/29/2019', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000009','Certificato-84981', '11/14/2021', 'Analisi PEST');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-15877', '4/23/2016', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000001','Certificato-23462', '11/16/2023', 'Analisi del valore');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000002','Certificato-30609', '12/2/2011', 'Analisi PEST');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000003','Certificato-24577', '8/18/2022', 'Analisi del portafoglio prodotti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-91048', '10/10/2004', 'Analisi del tasso di abbandono');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-61901', '11/4/2009', 'Analisi del portafoglio prodotti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-82484', '9/10/2024', 'Analisi del valore');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-27121', '6/8/2017', 'Analisi della concorrenza');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-45493', '4/3/2001', 'Analisi delle coorti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-60734', '11/5/2013', 'Analisi delle coorti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-57048', '2/19/2017', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-44708', '3/5/2001', 'Analisi del valore');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-79683', '5/18/2006', 'Analisi PEST');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-34886', '1/27/2016', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-82063', '2/16/2021', 'Analisi delle coorti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-71309', '3/31/2018', 'Analisi del valore');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-85064', '4/14/2008', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-68980', '6/14/2000', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-34321', '11/25/2007', 'Analisi del ciclo di vita del prodotto');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-25291', '10/17/2019', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-69595', '8/6/2022', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-13152', '2/12/2007', 'Analisi del ciclo di vita del prodotto');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-36130', '6/2/2008', 'Analisi SWOT');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-38830', '12/16/2011', 'Analisi sensoriale');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-11534', '7/15/2023', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-14008', '10/31/2014', 'Analisi sensoriale');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-69366', '2/29/2024', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-20770', '12/13/2004', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-95016', '4/9/2005', 'Analisi SWOT');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-90416', '11/7/2018', 'Analisi della concorrenza');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-29450', '5/21/2018', 'Analisi PEST');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-97181', '10/24/2005', 'Analisi SWOT');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-98794', '8/25/2018', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-57695', '1/22/2014', 'Analisi del portafoglio prodotti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-34157', '3/30/2008', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-60635', '8/7/2002', 'Analisi SWOT');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-76791', '3/8/2011', 'Analisi del percorso cliente');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-70359', '3/7/2018', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-69521', '7/19/2022', 'Analisi della concorrenza');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-39033', '7/8/2002', 'Analisi del portafoglio prodotti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-17763', '7/19/2000', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-67901', '2/18/2010', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-81654', '2/23/2017', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-19803', '9/1/2017', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-93378', '3/17/2004', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-67162', '10/26/2005', 'Analisi del percorso cliente');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-18790', '6/4/2001', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-53132', '10/16/2013', 'Analisi del percorso cliente');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-14703', '7/26/2021', 'Analisi del tasso di abbandono');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-56383', '2/13/2023', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-60892', '1/7/2018', 'Analisi SWOT');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-54413', '5/27/2000', 'Analisi dei guasti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-60299', '1/6/2016', 'Analisi sensoriale');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-50953', '8/15/2018', 'Analisi del tasso di abbandono');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-72793', '4/4/2017', 'Analisi sensoriale');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-60599', '9/16/2019', 'Analisi ABC');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-49754', '1/23/2003', 'Analisi ABC');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-37558', '8/28/2001', 'Analisi delle coorti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-27238', '7/22/2004', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-59984', '12/21/2005', 'Analisi del tasso di abbandono');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-36900', '4/12/2001', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-95248', '5/19/2004', 'Analisi del portafoglio prodotti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-25843', '3/15/2005', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-45015', '10/13/2002', 'Analisi del tasso di abbandono');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-69363', '9/11/2004', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-73354', '1/2/2002', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-86176', '4/7/2011', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-49242', '11/30/2013', 'Analisi della concorrenza');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-25778', '10/9/2021', 'Analisi PEST');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-45297', '6/21/2014', 'Analisi delle coorti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-14814', '1/2/2019', 'Analisi ABC');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-37129', '3/21/2009', 'Analisi sensoriale');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-54532', '6/2/2002', 'Analisi ABC');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-50216', '10/26/2002', 'Analisi del tasso di abbandono');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-78619', '10/5/2003', 'Analisi della concorrenza');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-45626', '1/28/2005', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-57079', '4/9/2008', 'Analisi ABC');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-63025', '10/16/2008', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-51506', '10/1/2011', 'Analisi del ciclo di vita del prodotto');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-50717', '3/28/2020', 'Analisi del portafoglio prodotti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-25150', '5/18/2012', 'Analisi SWOT');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-81485', '4/20/2004', 'Analisi della concorrenza');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-52904', '8/9/2015', 'Analisi ABC');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-99740', '8/5/2015', 'Analisi del valore');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-10615', '8/14/2006', 'Analisi ABC');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-60824', '12/22/2007', 'Analisi SWOT');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-36479', '12/18/2018', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-41355', '6/28/2004', 'Analisi della concorrenza');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-85557', '7/5/2006', 'Analisi del valore');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-47301', '10/12/2023', 'Analisi del tasso di abbandono');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-73302', '4/16/2011', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-69406', '3/1/2003', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-98177', '7/26/2022', 'Analisi dei guasti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-90033', '6/14/2005', 'Analisi del ciclo di vita del prodotto');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-10088', '4/22/2009', 'Analisi del valore');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-37017', '2/17/2013', 'Analisi della concorrenza');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-81262', '11/15/2002', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-38139', '2/26/2014', 'Analisi del tasso di abbandono');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-80079', '6/24/2018', 'Analisi PEST');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-54076', '11/8/2006', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-90602', '4/5/2011', 'Analisi della concorrenza');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-82935', '5/23/2007', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-31885', '7/24/2003', 'Analisi PEST');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-89355', '12/1/2009', 'Analisi della concorrenza');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-12543', '12/24/2008', 'Analisi sensoriale');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-35483', '4/30/2004', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-54555', '7/30/2008', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-79758', '8/16/2004', 'Analisi della concorrenza');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-71490', '10/5/2012', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-30720', '12/18/2019', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-78079', '4/18/2014', 'Analisi del valore');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-49185', '12/25/2022', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-38991', '9/24/2008', 'Analisi dei guasti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-87808', '1/20/2019', 'Analisi del valore');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-96747', '4/27/2004', 'Analisi congiunta');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-51840', '12/6/2005', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-59213', '10/21/2000', 'Analisi sensoriale');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-85440', '7/5/2020', 'Analisi PEST');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-31470', '9/16/2020', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-46441', '6/26/2023', 'Analisi del tasso di abbandono');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-19413', '11/20/2006', 'Analisi del percorso cliente');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-14462', '11/30/2003', 'Analisi ABC');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-11336', '1/16/2014', 'Analisi del tasso di abbandono');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-94410', '10/26/2017', 'Analisi del tasso di abbandono');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-67538', '9/3/2015', 'Analisi del tasso di abbandono');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-34497', '11/11/2011', 'Analisi del sentiment');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-83827', '1/13/2005', 'Analisi sensoriale');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-74316', '3/7/2004', 'Analisi dei guasti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-84933', '6/30/2002', 'Analisi del ciclo di vita del prodotto');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-77089', '4/20/2001', 'Analisi del percorso cliente');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-84687', '11/18/2022', 'Analisi sensoriale');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-76958', '7/5/2007', 'Analisi dell''attribuzione');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-50272', '4/27/2003', 'Analisi delle coorti');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-77135', '3/27/2023', 'Analisi sensoriale');
-insert into Autenticazione (codice_certificante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) values ('000000000000','Certificato-21908', '11/2/2016', 'Analisi ABC');
+INSERT INTO Autenticazione(codice_autenticante, certificatore, nome, prodotto, data_emanazione, tecnica_analisi) VALUES 
+('110219273002', '01336956467', 'Analisi ambientale 1', '239844120035', '2010-03-15', 'Spettrometria di massa'),
+('110219273032', '01336956467', 'Controllo qualità 1', '172372921092', '2011-06-22', 'Cromatografia liquida'),
+('110212273002', '01336956467', 'Studio tessuti 1', '918717534794', '2012-01-09', 'Microscopia elettronica'),
+('000219273002', '01336956467', 'Mineralogia 1', '078414955750', '2013-11-30', 'Diffrazione a raggi X'),
+('110219273123', '01336956467', 'Caratterizzazione polimeri', '178739624812', '2014-04-18', 'Risonanza magnetica nucleare'),
+('110219248325', '01336956467', 'Test termico campione A', '117892898863', '2015-08-25', 'Analisi termica'),
+('110111173002', '01336956467', 'Studio pigmenti antichi', '444356743409', '2016-07-03', 'Spettroscopia UV-Vis'),
+('110239273002', '01336956467', 'Separazione proteine', '982672012441', '2017-12-14', 'Elettroforesi'),
+('110219456702', '01336956467', 'Analisi reazione esotermica', '349699478597', '2018-05-01', 'Calorimetria differenziale'),
+('000219273002', '15375360968', 'Identificazione composti volatili', '774226142988', '2019-09-12', 'Spettroscopia infrarossa'),
+('110219273089', '15375360968', 'Analisi metalli pesanti', '925929089544', '2020-02-20', 'Spettrometria di massa'),
+('110219273098', '15375360968', 'Controllo qualità 2', '417803935840', '2021-06-17', 'Cromatografia liquida'),
+('110219273090', '15375360968', 'Studio tessuti 2', '562770910703', '2022-03-11', 'Microscopia elettronica'),
+('110219273080', '15375360968', 'Cristallografia proteine', '503676862364', '2023-10-06', 'Diffrazione a raggi X'),
+('110219273087', '26147597546', 'Analisi strutturale materiale B', '956103427461', '2024-01-19', 'Risonanza magnetica nucleare'),
+('110245273002', '26147597546', 'Studio degradazione termica', '506877454397', '2025-04-23', 'Analisi termica'),
+('110219248721', '26147597546', 'Spettro UV sostanza X', '574294585182', '2010-10-10', 'Spettroscopia UV-Vis'),
+('113219273002', '26147597546', 'Separazione campione 1', '496964111376', '2011-02-02', 'Elettroforesi'),
+('110218973002', '26147597546', 'Analisi differenziale 1', '205543764255', '2012-08-29', 'Calorimetria differenziale'),
+('110219273786', '26147597546', 'Studio oli essenziali', '840034486103', '2013-05-20', 'Spettroscopia infrarossa'),
+('220219273002', '73690530380', 'Rilevamento arsenico', '865165501572', '2014-12-05', 'Spettrometria di massa'),
+('110219555502', '73690530380', 'Controllo qualità 3', '117959372641', '2015-03-07', 'Cromatografia liquida'),
+('333339273002', '73690530380', 'Studio batteri 1', '338934917940', '2016-11-11', 'Microscopia elettronica'),
+('110220281002', '73690530380', 'Diffrazione cristallo A', '113157746282', '2017-06-16', 'Diffrazione a raggi X'),
+('110777273002', '73690530380', 'Analisi molecola organica', '219604579938', '2018-01-25', 'Risonanza magnetica nucleare'),
+('010219273002', '73690530380', 'Test stabilità termica', '551026207394', '2019-07-30', 'Analisi termica'),
+('144219273002', '73690530380', 'Assorbimento UV pigmenti', '913087057097', '2020-09-09', 'Spettroscopia UV-Vis'),
+('132119273002', '73690530380', 'Separazione proteica 2', '182600834840', '2021-10-22', 'Elettroforesi'),
+('117869273002', '73690530380', 'Analisi DSC campione Y', '186887554825', '2022-12-12', 'Calorimetria differenziale'),
+('110299993002', '73690530380', 'Identificazione aromi', '719827192823', '2023-04-04', 'Spettroscopia infrarossa'),
+('183719273002', '73690530380', 'Metalli nei suoli', '325315132970', '2024-06-06', 'Spettrometria di massa'),
+('110219203002', '04813875099', 'Controllo qualità 4', '928170217097', '2025-08-08', 'Cromatografia liquida'),
+('110219278888', '04813875099', 'Studio cellule vegetali', '495012528159', '2010-05-19', 'Microscopia elettronica'),
+('190219273002', '04813875099', 'Analisi sali minerali', '781588466371', '2011-09-21', 'Diffrazione a raggi X'),
+('111729273002', '04813875099', 'Struttura farmaco A', '985593165501', '2012-03-03', 'Risonanza magnetica nucleare'),
+('118971273002', '04813875099', 'Comportamento termico polimeri', '925109033191', '2013-07-07', 'Analisi termica'),
+('999219273002', '04813875099', 'Spettro UV campione Z', '508584391436', '2014-02-14', 'Spettroscopia UV-Vis'),
+('147369273002', '04813875099', 'Elettroforesi enzimi', '009341078864', '2015-12-31', 'Elettroforesi'),
+('118889273002', '04813875099', 'DSC polimero B', '523466089860', '2016-01-01', 'Calorimetria differenziale'),
+('110219270183', '50660166642', 'Spettro IR molecola C', '301250103969', '2017-03-17', 'Spettroscopia infrarossa'),
+('810219273002', '50660166642', 'Tracce di metalli', '374006937447', '2018-06-06', 'Spettrometria di massa'),
+('826219273002', '50660166642', 'Monitoraggio liquidi', '969763082170', '2019-11-11', 'Cromatografia liquida'),
+('192719273002', '50660166642', 'Analisi materiale biologico', '442216925458', '2020-10-10', 'Microscopia elettronica'),
+('998419273002', '50660166642', 'Cristallografia farmaco B', '619793394817', '2021-01-01', 'Diffrazione a raggi X'),
+('113843273002', '50660166642', 'Verifica struttura molecolare', '445972375353', '2022-05-05', 'Risonanza magnetica nucleare'),
+('110219273008', '50660166642', 'Stabilità termica campione Z', '691304847952', '2023-08-08', 'Analisi termica'),
+('110219272836', '50660166642', 'Assorbimento UV sostanza K', '914490640296', '2024-11-11', 'Spettroscopia UV-Vis'),
+('992741273002', '50660166642', 'Separazione frammenti DNA', '530517895094', '2025-12-24', 'Elettroforesi'),
+('333319273002', '50660166642', 'Analisi differenziale 1', '062144828104', '2012-08-29', 'Calorimetria differenziale'),
+('149649273002', '50660166642', 'Analisi ambientale 1', '612432218300', '2010-03-15', 'Spettrometria di massa'),
+('194219273002', '50660166642', 'Controllo qualità 1', '566734512021', '2011-06-22', 'Cromatografia liquida'),
+('194937273002', '68954797914', 'Studio tessuti 1', '845805177183', '2012-01-09', 'Microscopia elettronica'),
+('194219273394', '68954797914', 'Mineralogia 1', '379594107004', '2013-11-30', 'Diffrazione a raggi X'),
+('194219273386', '68954797914', 'Caratterizzazione polimeri', '915180368366', '2014-04-18', 'Risonanza magnetica nucleare'),
+('194219272846', '68954797914', 'Test termico campione A', '182987499412', '2015-08-25', 'Analisi termica'),
+('194213333002', '68954797914', 'Studio pigmenti antichi', '733525839966', '2016-07-03', 'Spettroscopia UV-Vis'),
+('194856673002', '68954797914', 'Separazione proteine', '446696207651', '2017-12-14', 'Elettroforesi'),
+('138559273002', '04813875099', 'Analisi reazione esotermica', '198749628985', '2018-05-01', 'Calorimetria differenziale'),
+('196219273002', '04813875099', 'Identificazione composti volatili', '660950688862', '2019-09-12', 'Spettroscopia infrarossa'),
+('194219273002', '04813875099', 'Analisi metalli pesanti', '851343631911', '2020-02-20', 'Spettrometria di massa'),
+('194213856002', '04813875099', 'Controllo qualità 2', '848927871472', '2021-06-17', 'Cromatografia liquida'),
+('194219274856', '04813875099', 'Studio tessuti 2', '916386523084', '2022-03-11', 'Microscopia elettronica'),
+('194856927302', '68954797914', 'Cristallografia proteine', '095656695899', '2023-10-06', 'Diffrazione a raggi X'),
+('346619273002', '68954797914', 'Analisi strutturale materiale B', '084485355156', '2024-01-19', 'Risonanza magnetica nucleare');

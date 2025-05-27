@@ -1,70 +1,71 @@
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('61932305503', 'Centizu', 'Belanting', 'Artistico', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('86162080090', 'Snaptags', 'Gucheng', 'Musicale', 'Bronzo');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('84716881040', 'Podcat', 'Burgau', 'Artistico', 'Premium');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('83526668134', 'Skinix', 'Newport', 'Culturale', 'Base');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('12465449312', 'Linkbridge', 'Sylhet', 'Sociale', 'Bronzo');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('74289433787', 'Tagopia', 'Shāhdādkot', 'Culturale', 'Argento');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('14068947025', 'Kwinu', 'Kebonan', 'Musicale', 'Base');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('47618139019', 'Jazzy', 'Kout na Šumavě', 'Sportivo', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('04614437473', 'Abata', 'Boca Chica', 'Benefico', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('99766545182', 'Yata', 'Dalu', 'Artistico', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('55004214548', 'Tanoodle', 'Biñan', 'Commerciale', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('69674108741', 'Topiclounge', 'Qukuhu', 'Sociale', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('83122792360', 'Skinte', '‘Izrā', 'Artistico', 'Base');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('71970085823', 'Quatz', 'Lipník nad Bečvou', 'Commerciale', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('90392852719', 'Twimm', 'Witkowo', 'Ambientale', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('19161960459', 'Plambee', 'Cibaregbeg Dua', 'Commerciale', 'Premium');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('93832186430', 'Voomm', 'Pictou', 'Ambientale', 'Premium');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('17801100941', 'Feedfish', 'Libuganon', 'Educativo', 'Base');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('13791749292', 'Oba', 'Mandi Bahāuddīn', 'Ambientale', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('36937100723', 'Tagtune', 'Moreira de Geraz do Lima', 'Sociale', 'Bronzo');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('73092096968', 'Kayveo', 'Doro Oo', 'Tecnologico', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('90495436855', 'Eare', 'Vukovije Donje', 'Ambientale', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('55284473872', 'Ntags', 'Funchal', 'Artistico', 'Premium');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('98184650631', 'Linktype', 'Xipi', 'Ambientale', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('77188315266', 'Skynoodle', 'Tierp', 'Musicale', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('03553812743', 'Vimbo', 'Taytayan', 'Tecnologico', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('49402830929', 'Gigazoom', 'Xinxu', 'Musicale', 'Base');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('09406932194', 'Jabbercube', 'Bongued', 'Culturale', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('16278334333', 'Abatz', 'Santa Rosa', 'Sociale', 'Premium');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('19011929430', 'Quinu', 'Maracanaú', 'Benefico', 'Bronzo');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('74164147750', 'Vinder', 'Bajera', 'Ambientale', 'Bronzo');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('89968189957', 'Eadel', 'Gal’bshtadt', 'Musicale', 'Argento');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('31755896333', 'Dynazzy', 'Stulovo', 'Artistico', 'Argento');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('15540135184', 'Photofeed', 'San José Poaquil', 'Ambientale', 'Bronzo');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('12315814618', 'Skinix', 'Spas-Zaulok', 'Musicale', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('67921247720', 'Kazio', 'Ihosy', 'Tecnologico', 'Premium');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('44176873717', 'Talane', 'Anuchino', 'Educativo', 'Argento');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('54619519149', 'Jetwire', 'Kadupinang', 'Sociale', 'Argento');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('21108652162', 'Kazu', 'Bromma', 'Benefico', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('80135853910', 'Vipe', 'Santo Niño', 'Ambientale', 'Bronzo');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('19413069967', 'Gigazoom', 'Jimaguayú', 'Sociale', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('08229542102', 'Flipstorm', 'Leiguan', 'Benefico', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('54076783689', 'Bluezoom', 'Köping', 'Tecnologico', 'Argento');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('18144723576', 'Innojam', 'Sarata', 'Artistico', 'Base');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('20980709734', 'Voomm', 'Sumberan', 'Ambientale', 'Premium');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('07664912440', 'Skilith', 'Cikananga', 'Sportivo', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('92564338989', 'Devcast', 'Domoni', 'Commerciale', 'Premium');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('89505678715', 'Jabberstorm', 'Yanglinqiao', 'Benefico', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('16450311979', 'Ooba', 'Želetava', 'Sportivo', 'Argento');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('36243893018', 'Vipe', 'Beregovoy', 'Sportivo', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('08117775955', 'Realfire', 'Mananum', 'Musicale', 'Premium');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('68350265856', 'Topicshots', 'Belogorskīy', 'Tecnologico', 'Argento');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('98854437316', 'Eadel', 'Russeifa', 'Benefico', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('20540424784', 'Devcast', 'Shumikha', 'Musicale', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('28025488342', 'Brainsphere', 'Luján', 'Sportivo', 'Bronzo');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('35865230061', 'InnoZ', 'Chlumčany', 'Benefico', 'Premium');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('30521257627', 'Centimia', 'Mikrókampos', 'Tecnologico', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('16014866572', 'Katz', 'Conel', 'Sportivo', 'Bronzo');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('47107924981', 'Blogspan', 'Calaba', 'Sportivo', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('62294108653', 'Jamia', 'Biała', 'Sociale', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('33249026289', 'Latz', 'La Gomera', 'Sportivo', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('71399121195', 'Skyndu', 'Kobylí', 'Tecnologico', 'Platino');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('78373135226', 'Zoomlounge', 'Frederico Westphalen', 'Sportivo', 'Base');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('00854139518', 'Katz', 'Guanhães', 'Commerciale', 'Base');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('77961512741', 'Fliptune', 'Matagbak', 'Culturale', 'Oro');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('13972598330', 'Babbleset', 'Górzno', 'Benefico', 'Premium');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('50952426144', 'Topicshots', 'Haicheng', 'Commerciale', 'Base');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('68788422795', 'Mymm', 'Rajapeni', 'Sportivo', 'Argento');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('79703132695', 'Feedbug', 'Voloshka', 'Sportivo', 'Premium');
-insert into Sponsor (partita_iva, nome, sede, tipologia, livello) values ('92497625604', 'Livefish', 'Huatajata', 'Educativo', 'Bronzo');
+INSERT INTO Sponsor (partita_iva, nome, sede, tipologia, livello) VALUES
+('61932305503', 'Centizu', 'Belanting', 'Artistico', 'Oro'),
+('86162080090', 'Snaptags', 'Gucheng', 'Musicale', 'Bronzo'),
+('84716881040', 'Podcat', 'Burgau', 'Artistico', 'Premium'),
+('83526668134', 'Skinix', 'Newport', 'Culturale', 'Base'),
+('12465449312', 'Linkbridge', 'Sylhet', 'Sociale', 'Bronzo'),
+('74289433787', 'Tagopia', 'Shāhdādkot', 'Culturale', 'Argento'),
+('14068947025', 'Kwinu', 'Kebonan', 'Musicale', 'Base'),
+('47618139019', 'Jazzy', 'Kout na Šumavě', 'Sportivo', 'Oro'),
+('04614437473', 'Abata', 'Boca Chica', 'Benefico', 'Oro'),
+('99766545182', 'Yata', 'Dalu', 'Artistico', 'Oro'),
+('55004214548', 'Tanoodle', 'Biñan', 'Commerciale', 'Oro'),
+('69674108741', 'Topiclounge', 'Qukuhu', 'Sociale', 'Platino'),
+('83122792360', 'Skinte', '‘Izrā', 'Artistico', 'Base'),
+('71970085823', 'Quatz', 'Lipník nad Bečvou', 'Commerciale', 'Platino'),
+('90392852719', 'Twimm', 'Witkowo', 'Ambientale', 'Platino'),
+('19161960459', 'Plambee', 'Cibaregbeg Dua', 'Commerciale', 'Premium'),
+('93832186430', 'Voomm', 'Pictou', 'Ambientale', 'Premium'),
+('17801100941', 'Feedfish', 'Libuganon', 'Educativo', 'Base'),
+('13791749292', 'Oba', 'Mandi Bahāuddīn', 'Ambientale', 'Oro'),
+('36937100723', 'Tagtune', 'Moreira de Geraz do Lima', 'Sociale', 'Bronzo'),
+('73092096968', 'Kayveo', 'Doro Oo', 'Tecnologico', 'Oro'),
+('90495436855', 'Eare', 'Vukovije Donje', 'Ambientale', 'Oro'),
+('55284473872', 'Ntags', 'Funchal', 'Artistico', 'Premium'),
+('98184650631', 'Linktype', 'Xipi', 'Ambientale', 'Platino'),
+('77188315266', 'Skynoodle', 'Tierp', 'Musicale', 'Platino'),
+('03553812743', 'Vimbo', 'Taytayan', 'Tecnologico', 'Platino'),
+('49402830929', 'Gigazoom', 'Xinxu', 'Musicale', 'Base'),
+('09406932194', 'Jabbercube', 'Bongued', 'Culturale', 'Platino'),
+('16278334333', 'Abatz', 'Santa Rosa', 'Sociale', 'Premium'),
+('19011929430', 'Quinu', 'Maracanaú', 'Benefico', 'Bronzo'),
+('74164147750', 'Vinder', 'Bajera', 'Ambientale', 'Bronzo'),
+('89968189957', 'Eadel', 'Gal’bshtadt', 'Musicale', 'Argento'),
+('31755896333', 'Dynazzy', 'Stulovo', 'Artistico', 'Argento'),
+('15540135184', 'Photofeed', 'San José Poaquil', 'Ambientale', 'Bronzo'),
+('12315814618', 'Skinix', 'Spas-Zaulok', 'Musicale', 'Platino'),
+('67921247720', 'Kazio', 'Ihosy', 'Tecnologico', 'Premium'),
+('44176873717', 'Talane', 'Anuchino', 'Educativo', 'Argento'),
+('54619519149', 'Jetwire', 'Kadupinang', 'Sociale', 'Argento'),
+('21108652162', 'Kazu', 'Bromma', 'Benefico', 'Oro'),
+('80135853910', 'Vipe', 'Santo Niño', 'Ambientale', 'Bronzo'),
+('19413069967', 'Gigazoom', 'Jimaguayú', 'Sociale', 'Oro'),
+('08229542102', 'Flipstorm', 'Leiguan', 'Benefico', 'Oro'),
+('54076783689', 'Bluezoom', 'Köping', 'Tecnologico', 'Argento'),
+('18144723576', 'Innojam', 'Sarata', 'Artistico', 'Base'),
+('20980709734', 'Voomm', 'Sumberan', 'Ambientale', 'Premium'),
+('07664912440', 'Skilith', 'Cikananga', 'Sportivo', 'Oro'),
+('92564338989', 'Devcast', 'Domoni', 'Commerciale', 'Premium'),
+('89505678715', 'Jabberstorm', 'Yanglinqiao', 'Benefico', 'Platino'),
+('16450311979', 'Ooba', 'Želetava', 'Sportivo', 'Argento'),
+('36243893018', 'Vipe', 'Beregovoy', 'Sportivo', 'Platino'),
+('08117775955', 'Realfire', 'Mananum', 'Musicale', 'Premium'),
+('68350265856', 'Topicshots', 'Belogorskīy', 'Tecnologico', 'Argento'),
+('98854437316', 'Eadel', 'Russeifa', 'Benefico', 'Platino'),
+('20540424784', 'Devcast', 'Shumikha', 'Musicale', 'Platino'),
+('28025488342', 'Brainsphere', 'Luján', 'Sportivo', 'Bronzo'),
+('35865230061', 'InnoZ', 'Chlumčany', 'Benefico', 'Premium'),
+('30521257627', 'Centimia', 'Mikrókampos', 'Tecnologico', 'Platino'),
+('16014866572', 'Katz', 'Conel', 'Sportivo', 'Bronzo'),
+('47107924981', 'Blogspan', 'Calaba', 'Sportivo', 'Oro'),
+('62294108653', 'Jamia', 'Biała', 'Sociale', 'Platino'),
+('33249026289', 'Latz', 'La Gomera', 'Sportivo', 'Oro'),
+('71399121195', 'Skyndu', 'Kobylí', 'Tecnologico', 'Platino'),
+('78373135226', 'Zoomlounge', 'Frederico Westphalen', 'Sportivo', 'Base'),
+('00854139518', 'Katz', 'Guanhães', 'Commerciale', 'Base'),
+('77961512741', 'Fliptune', 'Matagbak', 'Culturale', 'Oro'),
+('13972598330', 'Babbleset', 'Górzno', 'Benefico', 'Premium'),
+('50952426144', 'Topicshots', 'Haicheng', 'Commerciale', 'Base'),
+('68788422795', 'Mymm', 'Rajapeni', 'Sportivo', 'Argento'),
+('79703132695', 'Feedbug', 'Voloshka', 'Sportivo', 'Premium'),
+('92497625604', 'Livefish', 'Huatajata', 'Educativo', 'Bronzo');
