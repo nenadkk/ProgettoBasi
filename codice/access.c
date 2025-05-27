@@ -8,7 +8,7 @@
 const char* queryDescriptions[QUERIES] = {};
 
 const char* queries[QUERIES] = {
-    //Query 1
+    "SELECT codice_fiscale FROM Persona;"
     //Query 2
     //Query 3
     //Query 4
