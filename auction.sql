@@ -18,8 +18,8 @@ CREATE TABLE Prodotto(
 CREATE TABLE Possesso(
     proprietario CHAR(16),
     prodotto CHAR(12),
-    data_inizio TIMESTAMP NOT NULL,
-    data_fine TIMESTAMP DEFAULT NULL,
+    data_inizio DATE NOT NULL,
+    data_fine DATE DEFAULT NULL,
 
     CHECK (data_fine IS NULL OR data_fine > data_inizio),
 

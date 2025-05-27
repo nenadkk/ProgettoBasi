@@ -102,5 +102,5 @@ INSERT INTO Persona (codice_fiscale, nome, cognome) VALUES
  ('754Y1DVKK0CB6C6M', 'Udale', 'Heinel'),
  ('75759CTAO768CT6U', 'Adolpho', 'Titherington'),
  ('3GZ07Q3U596VD0K4', 'Virgil', 'McClancy'),
- ('58OHWJOY4P75X1I2', 'Rhianna', 'Priden'),
+ ('58OHWJOY4P75X1I2', 'Rhianna', 'Priden')
 ON CONFLICT(codice_fiscale) DO NOTHING;
