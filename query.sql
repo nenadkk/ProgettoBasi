@@ -1,135 +1,28 @@
---tutti i nomi di tabelle sono con l'iniziale maiuscole e il resto minuscolo
---tutti gli attributi sono in minuscolo 
+--QUERY 1: Trovare gli utenti che hanno vinto più di 3 aste
+SELECT p.nome, p.cognome, p.codice_fiscale, COUNT(p.codice_fiscale)
+FROM Asta a LEFT JOIN Offerta o ON(a.codice = o.asta AND a.dataOra_offerta_vincente = o.orario_offerta)
+LEFT JOIN Persona p ON(o.offerente = p.codice_fiscale)
+WHERE a.data_fine IS NOT NULL
+GROUP BY o.offerente
+HAVING COUNT(o.offerente) > 3;
 
-CREATE TABLE Persona(
-    codice_fiscale CHAR(16) PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    cognome VARCHAR(100) NOT NULL
-);
+--QUERY 2: Per ogni tipo di competenza, trovare quali sono i banditori specializzati in essa nell'ultimo anno
+SELECT b.partita_iva, b.nome, b.sede, b.esperienza, c.data_specializzazione
+FROM Competenza c JOIN Banditore b ON(c.banditore = b.partita_iva)
+WHERE c.data_specializzazione >= CURRENT_DATE - INTERVAL '1 year';  
 
-CREATE TABLE Certificatore(
-    p_iva CHAR(11) PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    sede VARCHAR(100) NOT NULL,
-    tipologia VARCHAR(100) NOT NULL,
+--QUERY 3: Trovare gli sponsor delle aste riguardanti prodotti valutati sotto i 1000e
+SELECT s.partita_iva, s.nome, s.sede, s.tipologia, s.livello
+FROM Sponsor s INNER JOIN Asta a ON(s.partita_iva = a.sponsor) LEFT JOIN Prodotto p ON(a.prodotto = p.seriale)
+WHERE p.valutazione >= 1000;
 
-    CHECK (p_iva ~ '^[0-9]{11}$') --controlla che sia di 11 caratteri numerici
-);
+--QUERY 4: Trovare le persone in possesso di almeno un prodotto con certificato di autenticità
+SELECT p.codice_fiscale, p.nome, p.cognome
+FROM Persona p INNER JOIN Possesso pos ON(p.codice_fiscale = pos.proprietario) LEFT JOIN Autenticazione a ON(a.prodotto = pos.prodotto)
+WHERE pos.data_fine IS NULL;
 
-CREATE TABLE Banditore(
-    p_iva CHAR(11) PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    sede VARCHAR(100) NOT NULL,
-    esperienza SMALLINT NOT NULL,
 
-    CHECK (p_iva ~ '^[0-9]{11}$')
-);
-
-CREATE TABLE Sponsor(
-    p_iva CHAR(11) PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    sede VARCHAR(100) NOT NULL,
-    tipologia VARCHAR(100) NOT NULL,
-    livello VARCHAR(100) NOT NULL,
-
-    CHECK (p_iva ~ '^[0-9]{11}$')
-);
-
-CREATE TABLE Prodotto(
-    seriale CHAR(12) PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    valutazione INT NOT NULL,
-    prezzo_mercato INT NOT NULL,
-
-    CHECK (valutazione>0), --un prodotto non può avere valutazione negativa
-    CHECK (prezzo_mercato>0), --un prodotto non può avere prezzo di mercato negativo
-    CHECK (seriale ~ '^[0-9]{12}$')
-);
-
-CREATE TABLE Possesso(
-    prodotto CHAR(12),
-    data_inizio DATETIME,
-    data_fine DATETIME,
-    proprietario CHAR(16),
-
-    FOREIGN KEY(prodotto) REFERENCES Prodotto(seriale),
-    FOREIGN KEY(proprietario) REFERENCES Persona(codice_fiscale),
-
-    CONSTRAINT PK_Possesso PRIMARY KEY(prodotto,data_inizio)
-);
-
-CREATE TABLE Autenticazione(
-    codice CHAR(12) NOT NULL,
-    certificatore CHAR(11),
-    nome VARCHAR(100) NOT NULL,
-    prodotto CHAR(12),
-    data_emanazione DATE NOT NULL,
-    tecnica_analisi VARCHAR(100) NOT NULL,
-
-    CHECK (codice ~ '^[0-9]{12}$'),
-
-    FOREIGN KEY(certificatore) REFERENCES Certificatore(p_iva),
-    FOREIGN KEY(prodotto) REFERENCES Prodotto(seriale),
-
-    CONSTRAINT PK_Autenticazione PRIMARY KEY(codice,certificatore)
-);
-
-CREATE TABLE Specializzazione(
-    codice CHAR(12) NOT NULL,
-    certificatore CHAR(11),
-    nome VARCHAR(100) NOT NULL,
-    data_emanazione DATE NOT NULL,
-    livello VARCHAR(100) NOT NULL,
-    
-    CHECK (codice ~ '^[0-9]{12}$'),
-    FOREIGN KEY(certificatore) REFERENCES Certificatore(p_iva),
-
-    CONSTRAINT PK_Specializzazione PRIMARY KEY(codice,certificatore)
-);
-
-CREATE TABLE Competenza(
-    certificatore CHAR(11),
-    codice_specializzazione CHAR(12),
-    banditore CHAR(11),
-    data_specializzazione DATE NOT NULL,
-
-    FOREIGN KEY(certificatore) REFERENCES Specializzazione(certificatore),
-    FOREIGN KEY(codice_specializzazione) REFERENCES Specializzazione(codice),
-    FOREIGN KEY(banditore) REFERENCES Banditore(p_iva),
-
-    CONSTRAINT PK_Competenza PRIMARY KEY(certificatore, codice_specializzazione, banditore)
-
-);
-
-CREATE TABLE Asta(
-    codice CHAR(12) PRIMARY KEY,
-    prodotto CHAR(12),
-    banditore CHAR(11),
-    data_inizio DATE NOT NULL,
-    data_fine DATE DEFAULT NULL,
-    base_asta INT NOT NULL,
-    dataOra_offerta_vincente DATETIME,
-    num_partecipanti INT DEFAULT 0,
-    sponsor CHAR(11),
-
-    CHECK (codice ~ '^[0-9]{12}$'),
-    CHECK (base_asta>0),
-
-    FOREIGN KEY(prodotto) REFERENCES Prodotto(seriale),
-    FOREIGN KEY(banditore) REFERENCES Banditore(p_iva),
-    FOREIGN KEY(offerta_vincente) REFERENCES Offerta(orario_offerta),
-    FOREIGN KEY(sponsor) REFERENCES Sponsor(p_iva)
-);
-
-CREATE TABLE Offerta(
-    asta CHAR(12),
-    offerente CHAR(16),
-    orario_offerta DATETIME NOT NULL,
-    import INT NOT NULL,
-
-    CHECK (codice ~ '^[0-9]{12}'),
-    FOREIGN KEY(asta) REFERENCES Asta(id_asta),
-    FOREIGN KEY(offerente) REFERENCES Persona(codice_fiscale),
-
-    CONSTRAINT PK_Offerta PRIMARY KEY(asta, orario_offerta)
-);
+--QUERY 5: Trovare le aste in cui l'offerta finale ha superato del 100% la base d'asta
+SELECT a.codice, a.prodotto, a.base_asta, a.data_inizio, a.data_fine, a.dataOra_offerta_vincente, a.banditore, a.num_partecipanti
+FROM Asta a LEFT JOIN Offerta o ON(a.codice = o.asta AND a.dataOra_offerta_vincente = o.orario_offerta)
+WHERE a.data_fine IS NOT NULL AND o.importo = a.base_asta*2;
