@@ -64,7 +64,7 @@ CREATE TABLE Asta(
     data_inizio DATE NOT NULL,
     data_fine DATE DEFAULT NULL,
     base_asta INT NOT NULL,
-    dataOra_offerta_vincente TIMESTAMP DEFAULT NULL,
+    importo_offerta_vincente INT DEFAULT NULL,
     num_partecipanti INT DEFAULT 0,
     sponsor CHAR(11) DEFAULT NULL,
 
@@ -86,11 +86,6 @@ CREATE TABLE Offerta(
     FOREIGN KEY(asta) REFERENCES Asta(codice_asta),
     FOREIGN KEY(offerente) REFERENCES Persona(codice_fiscale)
 );
-
-ALTER TABLE Asta
-ADD CONSTRAINT fk_offerta_vincente
-FOREIGN KEY (codice_asta, dataOra_offerta_vincente)
-    REFERENCES Offerta(asta, orario_offerta);
 
 CREATE TABLE Autenticazione(
     codice_autenticante CHAR(12) NOT NULL,
