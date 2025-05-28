@@ -1,32 +1,27 @@
-CREATE TABLE Persona(
+---- CREAZIONE DATABASE ----
+
+CREATE TABLE Persona (
     codice_fiscale CHAR(16) PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
     cognome VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE Prodotto(
+CREATE TABLE Prodotto (
     seriale CHAR(12) PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
-    valutazione INT NOT NULL,
-    prezzo_mercato INT NOT NULL,
-
-    CHECK (valutazione > 0),
-    CHECK (prezzo_mercato > 0), 
+    valutazione INT NOT NULL CHECK (valutazione > 0),
+    prezzo_mercato INT NOT NULL CHECK (prezzo_mercato > 0),
     CHECK (seriale ~ '^[0-9]{12}$')
 );
 
-CREATE TABLE Possesso(
-    proprietario CHAR(16),
-    prodotto CHAR(12),
+CREATE TABLE Possesso (
+    proprietario CHAR(16) NOT NULL,
+    prodotto CHAR(12) NOT NULL,
     data_inizio DATE NOT NULL,
-    data_fine DATE DEFAULT NULL,
-
-    CHECK (data_fine IS NULL OR data_fine > data_inizio),
-
+    data_fine DATE DEFAULT NULL CHECK (data_fine IS NULL OR data_fine > data_inizio),
     PRIMARY KEY (prodotto, data_inizio),
-
-    FOREIGN KEY(proprietario) REFERENCES Persona(codice_fiscale),
-    FOREIGN KEY(prodotto) REFERENCES Prodotto(seriale)
+    FOREIGN KEY (proprietario) REFERENCES Persona(codice_fiscale),
+    FOREIGN KEY (prodotto) REFERENCES Prodotto(seriale)
 );
 
 CREATE TABLE Certificatore(
@@ -127,9 +122,7 @@ CREATE TABLE Competenza(
     FOREIGN KEY(banditore) REFERENCES Banditore(partita_iva)
 );
 
-
-
-
+---- POPOLAMENTO DATABASE ----
 INSERT INTO Persona (codice_fiscale, nome, cognome) VALUES 
 ('O3OUCACMF7211P48', 'Malissia', 'Matt'),
 ('9VF02U229374KL7B', 'Olly', 'Hedger'),
@@ -1335,7 +1328,7 @@ INSERT INTO Competenza(certificatore, codice_specializzazione, banditore, data_s
 ('01336956467', '604656293489', '96480930808', '2024-12-12'),
 ('01336956467', '604656293489', '01900366926', '2025-09-01'),
 ('01336956467', '604656293489', '77861434385', '2025-09-01'),
-('01336956467', '604656293489', '77861434385', '2025-04-27'),
+('01336956467', '604656293489', '11390255771', '2025-04-27'),
 ('01336956467', '604656293489', '54725635217', '2024-03-12'),
 ('68331043676', '177308631281', '54725635217', '2025-09-01'),
 ('68331043676', '177308631281', '60654323464', '2024-12-12'),
@@ -1358,6 +1351,59 @@ INSERT INTO Competenza(certificatore, codice_specializzazione, banditore, data_s
 ('68331043676', '035344954741', '43210427295', '2023-09-18'),
 ('68331043676', '035344954741', '77861434385', '2023-07-09');
 
+------ QUERY ------
 
+-- Query 1:
+-- Trova gli utenti che hanno vinto almeno 1 asta e ne riporta nome, cognome, codice fiscale e numero di aste vinte
+SELECT p.nome, p.cognome, p.codice_fiscale, COUNT(*) AS aste_vinte
+FROM Asta a
+JOIN Offerta o ON a.codice_asta = o.asta
+JOIN Persona p ON o.offerente = p.codice_fiscale
+WHERE a.data_fine IS NOT NULL AND o.importo = a.importo_offerta_vincente
+GROUP BY p.nome, p.cognome, p.codice_fiscale
+HAVING COUNT(*) >= 1
+ORDER BY aste_vinte DESC;
 
+-- Query 2:
+-- Mostra i banditori e le relative competenze ottenute nell'anno precedente
+SELECT b.partita_iva AS p_iva_banditore, c.data_specializzazione, s.nome AS nome_specializzazione, s.livello
+FROM Competenza c
+INNER JOIN Banditore b ON c.banditore = b.partita_iva
+INNER JOIN Specializzazione s 
+    ON c.codice_specializzazione = s.codice_specializzante
+    AND c.certificatore = s.certificatore
+WHERE c.data_specializzazione >= CURRENT_DATE - INTERVAL '1 year'
+ORDER BY b.partita_iva, c.data_specializzazione;
 
+-- Query 3:
+-- Calcola la media dei prezzi di vendita per sponsor con almeno 1 asta vinta
+SELECT s.partita_iva, s.nome, AVG(a.importo_offerta_vincente) AS media_prezzo_vendita
+FROM Asta a
+INNER JOIN Sponsor s ON a.sponsor = s.partita_iva
+INNER JOIN Offerta o ON a.codice_asta = o.asta AND a.importo_offerta_vincente = o.importo
+WHERE a.data_fine IS NOT NULL
+GROUP BY s.partita_iva, s.nome
+HAVING COUNT(*) >= 1
+ORDER BY s.nome ASC;
+
+-- Query 4:
+-- Conta i prodotti autenticati attualmente in possesso delle persone
+SELECT p.codice_fiscale, p.nome, p.cognome, COUNT(pos.prodotto) AS num_prodotti_certificati
+FROM Persona p
+INNER JOIN Possesso pos ON p.codice_fiscale = pos.proprietario
+INNER JOIN Autenticazione a ON a.prodotto = pos.prodotto
+WHERE pos.data_fine IS NULL
+GROUP BY p.codice_fiscale
+ORDER BY num_prodotti_certificati DESC;
+
+-- Query 5:
+-- Visualizza le aste con offerta vincente superiore a 10 volte la base d'asta e con almeno 5 offerte
+SELECT a.codice_asta, a.prodotto, a.base_asta, a.importo_offerta_vincente, a.num_partecipanti
+FROM Asta a
+JOIN Offerta o ON a.codice_asta = o.asta
+WHERE a.data_fine IS NOT NULL AND a.importo_offerta_vincente >= a.base_asta * 10
+GROUP BY a.codice_asta, a.prodotto, a.base_asta, a.importo_offerta_vincente, a.num_partecipanti
+HAVING COUNT(o.orario_offerta) >= 5
+ORDER BY a.codice_asta ASC;
+
+--- INDICI
