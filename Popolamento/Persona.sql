@@ -33,7 +33,7 @@ INSERT INTO Persona (codice_fiscale, nome, cognome) VALUES
  ('1J553L60SU90F875', 'Brenda', 'Aleksandrev'),
  ('12Y8W8W23IG8VYY5', 'Letitia', 'Gravenell'),
  ('56KJ2665C1207409', 'Dal', 'Wildish'),
- ('39R19L060D8863TG', 'Itch', 'Ofer'),
+ ('39R19L060D8863TG', 'Tungtung', 'Sahur'),
  ('A8Q47392B9J3Y812', 'Lora', 'Nannini'),
  ('9W96WV885ET121Y3', 'Husain', 'Simons'),
  ('VYBUX9R1I5W5DBE7', 'Ave', 'Wyer'),
@@ -103,4 +103,3 @@ INSERT INTO Persona (codice_fiscale, nome, cognome) VALUES
  ('75759CTAO768CT6U', 'Adolpho', 'Titherington'),
  ('3GZ07Q3U596VD0K4', 'Virgil', 'McClancy'),
  ('58OHWJOY4P75X1I2', 'Rhianna', 'Priden')
-ON CONFLICT(codice_fiscale) DO NOTHING;
