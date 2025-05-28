@@ -1,57 +1,72 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <libpq-fe.h>
 
 #define CHARACTERS_PER_COLUMN 30
 #define QUERIES 5
 
+// Descrizioni delle query
 const char* queryDescriptions[QUERIES] = {
-    "Trovare gli utenti che hanno vinto almeno N aste e riportarne il nome, il cognome, il codice fiscale e il numero di aste vinte",
-    "Mostrare i banditori con competenze acquisite negli ultimi N anni",
-    "Media dei prezzi di vendita per sponsor con almeno N aste vinte",
-    "Contare i prodotti autenticati in possesso attuale delle persone",
-    "Visualizzare aste con offerta vincente superiore alla base d'asta * 10 e almeno 5 offerte"
+    "Elenca utenti che hanno vinto almeno un certo numero di aste.",
+    "Mostra banditori con competenze ottenute da data specifica (YYYY-MM-DD).",
+    "Calcola media prezzi di vendita per sponsor con minimo aste vinte.",
+    "Conta prodotti autenticati in possesso attivo da data specifica (YYYY-MM-DD).",
+    "Visualizza aste con offerta vincente superiore a multiplo base asta e minimo offerte."
 };
 
+// Query SQL parametriche
 const char* queries[QUERIES] = {
-    //Query 1
+    // 1
     "SELECT p.nome, p.cognome, p.codice_fiscale, COUNT(*) AS aste_vinte "
-    "FROM Asta a JOIN Offerta o ON a.codice_asta = o.asta JOIN Persona p ON o.offerente = p.codice_fiscale "
+    "FROM Asta a "
+    "JOIN Offerta o ON a.codice_asta = o.asta "
+    "JOIN Persona p ON o.offerente = p.codice_fiscale "
     "WHERE a.data_fine IS NOT NULL AND o.importo = a.importo_offerta_vincente "
     "GROUP BY p.nome, p.cognome, p.codice_fiscale "
-    "HAVING COUNT(*) >= 1;",
-    
-    // Query 2 (parametrica - N anni)
-    "SELECT b.partita_iva AS p_iva_banditore, b.nome, b.sede, b.esperienza, c.data_specializzazione "
-    "FROM Competenza c INNER JOIN Banditore b ON(c.banditore = b.partita_iva) "
-    "WHERE c.data_specializzazione >= CURRENT_DATE - INTERVAL '$1 year';",
+    "HAVING COUNT(*) >= $1 "
+    "ORDER BY aste_vinte DESC;",
 
-    // Query 3 (parametrica - N aste vinte)
+    // 2
+    "SELECT b.partita_iva AS p_iva_banditore, c.data_specializzazione, s.nome AS nome_specializzazione, s.livello "
+    "FROM Competenza c "
+    "INNER JOIN Banditore b ON c.banditore = b.partita_iva "
+    "INNER JOIN Specializzazione s ON c.codice_specializzazione = s.codice_specializzante "
+    "    AND c.certificatore = s.certificatore "
+    "WHERE c.data_specializzazione >= $1 "
+    "ORDER BY b.partita_iva, c.data_specializzazione;",
+
+    // 3
     "SELECT s.partita_iva, s.nome, AVG(a.importo_offerta_vincente) AS media_prezzo_vendita "
-    "FROM Asta a INNER JOIN Sponsor s ON(a.sponsor = s.partita_iva) INNER JOIN Offerta o ON(a.codice_asta = o.asta AND a.importo_offerta_vincente = o.importo) "
+    "FROM Asta a "
+    "INNER JOIN Sponsor s ON a.sponsor = s.partita_iva "
+    "INNER JOIN Offerta o ON a.codice_asta = o.asta AND a.importo_offerta_vincente = o.importo "
     "WHERE a.data_fine IS NOT NULL "
     "GROUP BY s.partita_iva, s.nome "
     "HAVING COUNT(*) >= $1 "
     "ORDER BY s.nome ASC;",
 
-    //Query 4
+    // 4
     "SELECT p.codice_fiscale, p.nome, p.cognome, COUNT(pos.prodotto) AS num_prodotti_certificati "
-    "FROM Persona p INNER JOIN Possesso pos ON(p.codice_fiscale = pos.proprietario) INNER JOIN Autenticazione a ON(a.prodotto = pos.prodotto) "
-    "WHERE pos.data_fine IS NULL "
-    "GROUP BY p.codice_fiscale;",
+    "FROM Persona p "
+    "INNER JOIN Possesso pos ON p.codice_fiscale = pos.proprietario "
+    "INNER JOIN Autenticazione a ON a.prodotto = pos.prodotto "
+    "WHERE pos.data_fine IS NULL OR pos.data_fine > $1 "
+    "GROUP BY p.codice_fiscale "
+    "ORDER BY num_prodotti_certificati DESC;",
 
-    //Query 5
+    // 5
     "SELECT a.codice_asta, a.prodotto, a.base_asta, a.importo_offerta_vincente, a.num_partecipanti "
-    "FROM Asta a JOIN Offerta o ON a.codice_asta = o.asta "
-    "WHERE a.data_fine IS NOT NULL AND a.importo_offerta_vincente >= a.base_asta * 10 "
-    "GROUP BY a.codice_asta, a.prodotto, a.base_asta, a.data_inizio, a.data_fine, a.importo_offerta_vincente, a.banditore, a.num_partecipanti "
-    "HAVING COUNT(o.orario_offerta) >= 5 "
+    "FROM Asta a "
+    "JOIN Offerta o ON a.codice_asta = o.asta "
+    "WHERE a.data_fine IS NOT NULL AND a.importo_offerta_vincente >= a.base_asta * $1 "
+    "GROUP BY a.codice_asta, a.prodotto, a.base_asta, a.importo_offerta_vincente, a.num_partecipanti "
+    "HAVING COUNT(o.orario_offerta) >= $2 "
     "ORDER BY a.codice_asta ASC;"
-
 };
 
 void errorDuringConnection(PGconn* dbConn, const char* message) {
-    fprintf(stderr, "%s %s\n", message, PQerrorMessage(dbConn));
+    fprintf(stderr, "%s: %s\n", message, PQerrorMessage(dbConn));
     PQfinish(dbConn);
     exit(EXIT_FAILURE);
 }
@@ -59,17 +74,17 @@ void errorDuringConnection(PGconn* dbConn, const char* message) {
 PGconn* startDataBaseConnection() {
     PGconn* dbConnection = PQconnectdb("dbname=progettobasi user=progetto");
 
-    if(PQstatus(dbConnection) != CONNECTION_OK) {
+    if (PQstatus(dbConnection) != CONNECTION_OK) {
         errorDuringConnection(dbConnection, "Errore durante il collegamento al database");
     }
 
     printf("Connessione al database avvenuta correttamente!\n");
-    
+
     return dbConnection;
 }
 
 void endDataBaseConnection(PGconn* dbConn) {
-    if(dbConn) {
+    if (dbConn) {
         PQfinish(dbConn);
         printf("Connessione al database terminata!\n");
     }
@@ -79,54 +94,82 @@ void printQueryResults(PGresult* result) {
     int columns = PQnfields(result);
     int rows = PQntuples(result);
 
-    printf("Stampa dei risultati della query\n ---------\n");
-    // Intestazioni
+    printf("\nRisultati query:\n");
+    // Stampa intestazioni
     for (int i = 0; i < columns; i++) {
-        printf("| %-*s", CHARACTERS_PER_COLUMN, PQfname(result, i));
+        printf("| %-*s ", CHARACTERS_PER_COLUMN, PQfname(result, i));
     }
     printf("|\n");
 
-    // Linea separatrice
+    // Linea di separazione
     for (int i = 0; i < columns; i++) {
-        printf("|%.*s", CHARACTERS_PER_COLUMN + 1, "-----------------------------------");
+        printf("|-%.*s-", CHARACTERS_PER_COLUMN, "------------------------------");
     }
     printf("|\n");
 
-    // Righe
+    // Stampa righe
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
-            const char *value = PQgetvalue(result, i, j);
-            printf("| %-*s", CHARACTERS_PER_COLUMN, value);
+            const char* value = PQgetvalue(result, i, j);
+            printf("| %-*s ", CHARACTERS_PER_COLUMN, value);
         }
         printf("|\n");
     }
+    printf("\n");
+}
+
+void executeParameterizedQuery(PGconn* dbConn, const char* query, int nParams, const char* paramValues[]) {
+    PGresult* queryResult = PQexecParams(dbConn, query, nParams, NULL, paramValues, NULL, NULL, 0);
+
+    if (PQresultStatus(queryResult) != PGRES_TUPLES_OK) {
+        fprintf(stderr, "Errore nell'esecuzione della query parametrica: %s\n", PQerrorMessage(dbConn));
+        PQclear(queryResult);
+        return;
+    }
+
+    printQueryResults(queryResult);
+    PQclear(queryResult);
 }
 
 void executeQuery(PGconn* dbConn, const char* query) {
     PGresult* queryResult = PQexec(dbConn, query);
 
-    if(PQresultStatus(queryResult) != PGRES_TUPLES_OK) {
-        fprintf(stderr, "Errore nella esecuzione della query : %s", PQerrorMessage(dbConn));
+    if (PQresultStatus(queryResult) != PGRES_TUPLES_OK) {
+        fprintf(stderr, "Errore nell'esecuzione della query: %s\n", PQerrorMessage(dbConn));
         PQclear(queryResult);
         return;
     }
 
-    //stampa dei risultati della query
     printQueryResults(queryResult);
     PQclear(queryResult);
 }
 
-void executeParameterizedQuery(PGconn* dbConn, const char* query, int numParams, const char** paramValues) {
-    PGresult* result = PQexecParams(dbConn, query, numParams, NULL, paramValues, NULL, NULL, 0);
+void clearInputBuffer() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) { }
+}
 
-    if (PQresultStatus(result) != PGRES_TUPLES_OK) {
-        fprintf(stderr, "Errore nella esecuzione della query parametrica: %s", PQerrorMessage(dbConn));
-        PQclear(result);
+int askInt(const char* prompt) {
+    int val;
+    while (1) {
+        printf("%s", prompt);
+        if (scanf("%d", &val) != 1) {
+            printf("Input non valido, riprova.\n");
+            clearInputBuffer();
+            continue;
+        }
+        clearInputBuffer();
+        return val;
+    }
+}
+
+void askString(const char* prompt, char* buffer, int size) {
+    printf("%s", prompt);
+    if (fgets(buffer, size, stdin) == NULL) {
+        buffer[0] = '\0';
         return;
     }
-
-    printQueryResults(result);
-    PQclear(result);
+    buffer[strcspn(buffer, "\n")] = '\0'; // rimuove newline
 }
 
 void querySelector(PGconn* dbConn) {
@@ -136,63 +179,93 @@ void querySelector(PGconn* dbConn) {
         printf("\n=== MENU QUERY ===\n");
         printf("0) Esci\n");
         for (int i = 0; i < QUERIES; ++i) {
-            printf("Query %d) %s\n", i + 1, queryDescriptions[i]);
+            printf("%d) %s\n", i + 1, queryDescriptions[i]);
         }
 
-        printf("Si scelga una query da eseguire (0 per uscire): ");
-        if (scanf("%d", &input) != 1) {
-            // Input non numerico
-            while (getchar() != '\n'); // Pulisci buffer
-            printf("Input non valido. Si inserica un numero valido.\n");
-            input = -1;
-            continue;
-        }
+        input = askInt("Seleziona una query da eseguire (0 per uscire): ");
 
         if (input == 0) {
             printf("Uscita dal programma.\n");
+            break;
         }
 
-        else if (input >= 1 && input <= QUERIES) {
-            printf("Esecuzione query: %s\n", queryDescriptions[input - 1]);
-        
-            if (input == 2) {
-                // Parametro: numero di anni
-                int anni;
-                printf("Inserisci il numero di anni (es. 1 per ultimo anno): ");
-                scanf("%d", &anni);
-                char anni_str[10];
-                snprintf(anni_str, sizeof(anni_str), "%d", anni);
-                const char* paramValues[1] = { anni_str };
-                executeParameterizedQuery(dbConn, queries[1], 1, paramValues);
-            }
-        
-            else if (input == 3) {
-                // Parametro: numero minimo di aste vinte
-                int minimo;
-                printf("Inserisci il numero minimo di aste vinte: ");
-                scanf("%d", &minimo);
-                char minimo_str[10];
-                snprintf(minimo_str, sizeof(minimo_str), "%d", minimo);
-                const char* paramValues[1] = { minimo_str };
-                executeParameterizedQuery(dbConn, queries[2], 1, paramValues);
-            }
-        
-            else {
-                executeQuery(dbConn, queries[input - 1]);
-            }
-        }
-        
-        else {
+        if (input < 1 || input > QUERIES) {
             printf("Scelta non valida. Inserisci un numero da 0 a %d.\n", QUERIES);
+            continue;
+        }
+
+        printf("Esecuzione query: %s\n", queryDescriptions[input - 1]);
+
+        switch (input) {
+            case 1: {
+                // Param: numero minimo aste vinte (intero)
+                int min_aste = askInt("Inserisci il numero minimo di aste vinte: ");
+                char param_str[12];
+                snprintf(param_str, sizeof(param_str), "%d", min_aste);
+                const char* params[1] = { param_str };
+                executeParameterizedQuery(dbConn, queries[0], 1, params);
+                break;
+            }
+
+            case 2: {
+                // Param: data in formato YYYY-MM-DD
+                char data[20];
+                askString("Inserisci la data minima di specializzazione (YYYY-MM-DD): ", data, sizeof(data));
+                const char* params[1] = { data };
+                executeParameterizedQuery(dbConn, queries[1], 1, params);
+                break;
+            }
+
+            case 3: {
+                // Param: minimo numero aste vinte (intero)
+                int min_aste = askInt("Inserisci il numero minimo di aste vinte per sponsor: ");
+                char param_str[12];
+                snprintf(param_str, sizeof(param_str), "%d", min_aste);
+                const char* params[1] = { param_str };
+                executeParameterizedQuery(dbConn, queries[2], 1, params);
+                break;
+            }
+
+            case 4: {
+                // Param: data in formato YYYY-MM-DD per filtro possesso attivo
+                char data[20];
+                askString("Inserisci la data per filtro possesso attivo (YYYY-MM-DD): ", data, sizeof(data));
+                const char* params[1] = { data };
+                executeParameterizedQuery(dbConn, queries[3], 1, params);
+                break;
+            }
+
+            case 5: {
+                // Param: multiplo base asta (float accettato come stringa)
+                //       numero minimo offerte (int)
+                char multiplo_str[20];
+                int min_offerte;
+
+                askString("Inserisci il multiplo della base asta: ", multiplo_str, sizeof(multiplo_str));
+                min_offerte = askInt("Inserisci il numero minimo di offerte: ");
+
+                const char* params[2] = { multiplo_str, NULL };
+                char min_offerte_str[12];
+                snprintf(min_offerte_str, sizeof(min_offerte_str), "%d", min_offerte);
+                params[1] = min_offerte_str;
+
+                executeParameterizedQuery(dbConn, queries[4], 2, params);
+                break;
+            }
+
+            default:
+                printf("Query non gestita.\n");
+                break;
         }
     }
 }
+
 int main() {
-    //connessione al database
     PGconn* dbConnection = startDataBaseConnection();
 
     querySelector(dbConnection);
 
     endDataBaseConnection(dbConnection);
+
     return 0;
 }
