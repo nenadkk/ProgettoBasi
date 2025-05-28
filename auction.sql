@@ -1407,3 +1407,4 @@ HAVING COUNT(o.orario_offerta) >= 5
 ORDER BY a.codice_asta ASC;
 
 --- INDICI
+CREATE INDEX index_offerta ON Offerta(asta);
