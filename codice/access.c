@@ -131,22 +131,9 @@ void executeParameterizedQuery(PGconn* dbConn, const char* query, int nParams, c
     PQclear(queryResult);
 }
 
-void executeQuery(PGconn* dbConn, const char* query) {
-    PGresult* queryResult = PQexec(dbConn, query);
-
-    if (PQresultStatus(queryResult) != PGRES_TUPLES_OK) {
-        fprintf(stderr, "Errore nell'esecuzione della query: %s\n", PQerrorMessage(dbConn));
-        PQclear(queryResult);
-        return;
-    }
-
-    printQueryResults(queryResult);
-    PQclear(queryResult);
-}
-
 void clearInputBuffer() {
     int c;
-    while ((c = getchar()) != '\n' && c != EOF) { }
+    while ((c = getchar()) != '\n' && c != EOF) {}
 }
 
 int askInt(const char* prompt) {
